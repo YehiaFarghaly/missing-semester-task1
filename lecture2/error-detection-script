@@ -1,0 +1,12 @@
+#!/bin/bash
+
+runs=0
+while true; do
+  runs=$((runs + 1))
+  ./my-script
+  if [[ $? -ne 0 ]]; then
+    echo "Script failed on run $runs"
+    break
+  fi
+done
+
